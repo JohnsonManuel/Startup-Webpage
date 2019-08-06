@@ -1,0 +1,103 @@
+body{
+  font-family: 'Lato';
+  font-size: 14px;
+  font-weight: 400;
+}
+
+//heading styles
+h1{
+  font-size: 82px;
+}
+h2{
+  font-size: 82px;
+}
+h3{
+  font-size: 24px;
+}
+
+//main text styles
+.main{
+  &-heading{
+    text-align: center;
+    font-size: 82px;
+    padding: 0 10px;
+    font-weight: bold;
+    color: $accent-2;
+  }
+  &-description{
+    text-align: center;
+    font-size: 24px;
+    padding: 0 10px;
+    line-height: 1.5;
+    color:$text-secondary;
+  }
+}
+.page-scroll{
+  font-size: 18px;
+  line-height: 2;
+  color:$text-primary;
+}
+
+//sub text styles
+
+.sub{
+  &-heading{
+    text-align: center;
+    font-size: 48px;
+    padding: 0 10px;
+    color: $text-primary;
+  }
+  &-description{
+    text-align: center;
+    font-size: 20px;
+    padding: 0 10px;
+    line-height: 2;
+    color:$text-secondary;
+  }
+}
+
+//button text styles
+
+.cta-button{
+  font-size: 16px;
+}
+
+// card text styles
+.card{
+  &-heading{
+    font-size:24px;
+  }
+  &-description{
+    font-size: 14px;
+    line-height: 2;
+    color:$text-secondary;
+  }
+}
+
+.bold-card{
+  color: $text-primary-invert;
+  text-align: center;
+  &-title{
+    font-size: 64px;
+    font-weight: 900;
+  }
+  &-text{
+    font-size: 24px;
+    line-height: 1.5;
+  }
+}
+
+.article-card__unit{
+  font-size: 14px;
+  color:$text-black;
+  &-bottom{
+    color:#848484;
+    span{
+      font-size: 12px;
+    }
+    .timestamp{
+      font-size: 14px;
+    }
+  }
+
+}

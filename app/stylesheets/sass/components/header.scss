@@ -1,0 +1,53 @@
+header{
+  padding: 20px 10px 25px 10px;
+  position: sticky;
+  top:0;
+  left:0;
+  right:0;
+  text-align: center;
+  z-index:3;
+  nav{
+    display: inline-block;
+    line-height: 25px;
+    vertical-align: middle;
+    a{
+      font-size: 14px;
+      float: left;
+      color:$text-primary;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-right: 2em;
+      &:hover{
+        font-size: 20px;
+        color: $accent-1;
+      }
+      &:last-child{
+        margin-right:0;
+      }
+    }
+  }
+  // ul{
+  //   display: inline-block;
+  //   vertical-align: middle;
+  //   li{
+  //     display: inline-block;
+  //     width:8em;
+  //     float: left;
+  //     a{
+  //       font-size: 14px;
+  //       text-decoration: none;
+  //       line-height: 20px;
+  //       transition: all 0.3s ease;
+  //       &:hover{
+  //         font-size: 20px;
+  //         color: $accent-1;
+  //       }
+  //     }
+  //   }
+  // }
+  .cta-button{
+    float:right;
+    color: $text-primary-invert;
+    background-color: $accent-1;
+  }
+}
