@@ -4,12 +4,15 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border: 0;
   font-size: 100%;
   font: inherit;
-  box-sizing:border-box;
+
   vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
 
+*,*::after,*::before{
+  box-sizing:border-box;
+}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
 
@@ -38,7 +41,8 @@ table {
 a{
   text-decoration:none; }
 
-input,button{
+input,button,textarea{
+  outline: none;
   border: none;
   font:inherit;
 }

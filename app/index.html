@@ -10,21 +10,16 @@
   </head>
   <body>
     <header>
-      <nav>
-        <!-- <li><a href="#">About us</a></li>
-        <li><a href="#">Process</a></li>
-        <li><a href="#">Startup</a></li>
-        <li><a href="#">Explication</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Contact</a></li> -->
-        <a href="#team-sec">About us</a>
-        <a href="#process-sec">Process</a>
-        <a href="#startup-sec">Startup</a>
-        <a href="#">Explication</a>
-        <a href="#news-sec">News</a>
-        <a href="#">Contact</a>
-      </nav>
-      <button class="cta-button"type="button" name="Apply">Apply</button>
+      <ul class="menu">
+        <li class="menu-links"><a href="#team-sec">team</a></li>
+        <li class="menu-links"><a href="#discover-sec">About us</a></li>
+        <li class="menu-links"><a href="#process-sec">Process</a></li>
+        <li class="menu-links"><span class="logo" href="#startup-sec">STARTUP</span></li>
+        <li class="menu-links"><a href="#explication-sec">Explicatijon</a></li>
+        <li class="menu-links"><a href="#news-sec">News</a></li>
+        <li class="menu-links"><a href="#">Contact</a></li>
+      </ul>
+      <button class="cta-button-header accent-1-bg" type="button" name="Apply">Apply</button>
     </header>
     <section class="hero">
       <article class="landing-page container">
@@ -38,7 +33,7 @@
 
       <!--Discover -->
 
-      <div id="discover" class="discoverus container">
+      <div id="discover-sec" class="discoverus container">
         <p class="sub-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt convallis dignissim. Integer convallis diam tortor, a blandit quam dignissim sed. Maecenas semper lobortis enim quis tincidunt. Donec quis ultrices orci. Suspendisse rutrum sapien ac lobortis suscipit. Nullam pellentesque fringilla est, in efficitur nisl porta eu. Donec elementum condimentum sem non bibendum.n pellentesque dolor sit amet nisi lacinia euismod. Mauris elementum turpis sem, ut laoreet purus porta ut. Suspendisse posuere purus id nunc eleifend, id condimentum nulla tempus. Donec tortor sem, efficitur a laoreet ut, lacinia ac ante</p>
         <button class="cta-button accent-2-bg"type="button" name="button">DISCOVER US</button>
       </div>
@@ -76,7 +71,7 @@
 
       <!-- Process -->
 
-      <div #id="process-sec" class="process container">
+      <div id="process-sec" class="process container">
         <h2 class="sub-heading">Process</h2>
         <p class="sub-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae tempus odio. Nam gravida diam eros, non ultricies velit varius ut.</p>
           <ul id="startup-sec" class="floatingcards-container">
@@ -109,7 +104,7 @@
 
       <!--Explication -->
 
-      <div class="explication container">
+      <div id="explication-sec" class="explication container">
         <p class="sub-description">VIVAMUS BLANDIT</p>
         <ul class="bold-cards-container">
           <li class="bold-card accent-1-bg">
@@ -147,6 +142,9 @@
           </li>
         </ul>
       </div>
+
+      <!--News -->
+
       <div id="news-sec" class="news container" >
         <ul class="article-cards-container">
           <li class="article-card">
@@ -218,29 +216,34 @@
         </ul>
         <button class="cta-button accent-2-bg"  type="button" name="button">DISCOVER NEWS</button>
       </div>
+
+      <!--Apply -->
+
       <div class="apply container">
         <h2 class="sub-heading">Apply</h2>
         <p class="sub-description">Thought experiments (Gedankenexperimenten) are “facts” in the sense</p>
         <form class="" action="index.html" method="post">
-          <ul >
-            <div class="input-text-group">
-              <li class="form-input-aside">
-                <label for="first-name">First Name</label>
-                <input id="first-name" type="text" name="name">
-              </li>
-              <li class="form-input-aside">
-                <label for="last-name">Last Name</label>
-                <input id="last-name" type="text" name="name">
-              </li>
-              <li class="form-input-aside">
-                <label for="email">Email</label>
-                <input id="email" type="text" name="name">
-              </li>
-              <li class="form-input-aside">
-                <label for="email">Telephone Number</label>
-                <input id="email" type="text" name="name">
-              </li>
-            </div>
+          <ul class="application_form">
+            <li>
+              <ul class="user-details">
+                <li class="user-details__field">
+                  <label for="first-name">First Name</label>
+                  <input id="first-name" type="text" name="firstname">
+                </li>
+                <li class="user-details__field">
+                  <label for="last-name">Last Name</label>
+                  <input id="last-name" type="text" name="lastname">
+                </li>
+                <li class="user-details__field">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" name="email">
+                </li>
+                <li class="user-details__field">
+                  <label for="telephone">Telephone Number</label>
+                  <input id="telephone" type="text" pattern="^[0][1-9]\d{9}$|^[1-9]\d{9}$" name="telephone">
+                </li>
+              </ul>
+            </li>
             <li class="cv-upload">
               <label>Upload your CV</label>
               <div class="file-dropzone">
@@ -249,31 +252,53 @@
                   <label for="cv-upload">Search a file</label>
                   <input id="cv-upload" type="file">
                 </div>
-
-
-
               </div>
-            </li>
-            <li class="comments">
+               <li class="comments">
               <label for="comment-area">Comments</label>
-              <textarea id="comment-area" name="name" rows="8"></textarea>
+              <textarea id="comment-area" name="name" rows="4"></textarea>
             </li>
           </ul>
-
-
-
-
-
-
-          <div class="comments">
-            <label for="comments"></label>
-
-          </div>
         </form>
-
-
+        <p class="apply-footer">Thought experiments (Gedankenexperimenten) are “facts” in the sense that they have a “real life” correlate in the form of electrochemical activity in the brain.</p>
+        <button class="cta-button accent-1-bg"type="button" name="button">VALIDATE</button>
       </div>
+    </section>
+    <footer class="accent-1-bg">
+      <div class="footer-left">
+        <a href="#"><span>STARTUP</span></a>
 
-      </section>
+        <ul>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Process</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Explication</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Contact</a> </li>
+        </ul>
+      </div>
+      <ul class="footer-right">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Legal Notice</a></li>
+        <li><div class="page-language">
+          <span>English</span>
+          <ul class="language-list">
+            <li>French</li>
+            <li>Russian</li>
+            <li>Korean</li>
+          </ul>
+        </div></li>
+        <li>
+          <div class="social">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </li>
+
+      </ul>
+    </footer>
   </body>
 </html>

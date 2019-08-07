@@ -6,47 +6,43 @@ header{
   right:0;
   text-align: center;
   z-index:3;
-  nav{
-    display: inline-block;
-    line-height: 25px;
-    vertical-align: middle;
-    a{
-      font-size: 14px;
+  .menu{
+    @include centerer(true,false);
+    &-links{
       float: left;
-      color:$text-primary;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      margin-right: 2em;
-      &:hover{
-        font-size: 20px;
-        color: $accent-1;
-      }
-      &:last-child{
-        margin-right:0;
+      padding: 0 2rem;
+      a{
+        font-size: 14px;
+        color:$text-primary;
+        &:hover{
+          color:$accent-2;
+        }
       }
     }
   }
-  // ul{
+  // nav{
   //   display: inline-block;
+  //   line-height: 25px;
   //   vertical-align: middle;
-  //   li{
-  //     display: inline-block;
-  //     width:8em;
+  //   a{
+  //     font-size: 14px;
   //     float: left;
-  //     a{
-  //       font-size: 14px;
-  //       text-decoration: none;
-  //       line-height: 20px;
-  //       transition: all 0.3s ease;
-  //       &:hover{
-  //         font-size: 20px;
-  //         color: $accent-1;
-  //       }
+  //     color:$text-primary;
+  //     text-decoration: none;
+  //     transition: all 0.3s ease;
+  //     margin-right: 2em;
+  //     &:last-child{
+  //       margin-right:0;
   //     }
   //   }
   // }
-  .cta-button{
-    float:right;
+  .logo{
+    font-size: 20px;
+    color: $accent-1;
+  }
+  .cta-button-header{
+    display: block;
+    margin-left: auto;
     color: $text-primary-invert;
     background-color: $accent-1;
   }

@@ -30,3 +30,8 @@
   display: block;
   clear:both;
 }
+
+@mixin rem-calc($property, $size ,$base-font-size: 16)
+{
+  #{$property}:($size/$base-font-size) * 1rem;
+}

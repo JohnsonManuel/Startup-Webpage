@@ -1,8 +1,10 @@
+html{
+  scroll-behavior: smooth;
+}
 .container{
   max-width: 1140px;
   margin: 0  auto;
 }
-
 
 /* Hero landing section */
 .hero{
@@ -29,16 +31,17 @@
   }
 
   p{
-    margin-top: 4rem;
+    @include rem-calc(margin-top,60);
   }
 
   .page-scroll{
     margin-top: 3.5rem;
     position: relative;
     a{
+      cursor: pointer;
       color:$text-primary;
     }
-    cursor: pointer;
+
     &::after{
       content: '';
       display: block;
@@ -80,7 +83,7 @@
 }
   .discoverus{
     text-align: center;
-    padding: 15rem 0 0 0;
+    @include rem-calc(padding-top,214);
     .cta-button{
       margin-top:2rem;
     }
@@ -89,7 +92,7 @@
 /* Team  section */
 
   .team{
-    padding: 15rem 0 0 0;
+    @include rem-calc(padding-top,214);
     &::after{
       @include clearfix();
     }
@@ -140,7 +143,7 @@
   /* process section */
 
   .process{
-    padding: 15rem 0 0 0;
+    @include rem-calc(padding-top,214);
     .sub-description{
       margin-top: 2rem;
       padding: 0 25%;
@@ -183,7 +186,7 @@
 
 //bold-card
   .explication{
-    margin-top: 6rem;
+    @include rem-calc(padding-top,125);
     .bold-cards-container{
       margin-top: 2rem;
       text-align: center;
@@ -231,7 +234,7 @@
     text-align: center;
     margin-top: 15rem;
     .cta-button{
-      margin-top: 4rem;
+      @include rem-calc(margin-top,69);
     }
     .article-cards-container{
       text-align: justify;
@@ -242,8 +245,8 @@
       }
       .article-card{
         display: inline-block;
-        width:calc(33.33% - 30px);
-        margin-top: 2rem;
+        width:calc(33.33% - 20px);
+        @include rem-calc(margin-top,44);
         border: solid 1px #dfdfdf;
         &__snapshot{
           @include size(100% , 180px);
@@ -257,14 +260,14 @@
           &-bottom{
             max-height: 30px;
             position: relative;
-            margin-top: 1rem;
+            margin-top: 2rem;
             padding-left: 0 10px;
             font-size: 12px;
             img{
               @include size(30px);
               border-radius:50%;
               overflow: hidden;
-              margin-right: 1rem;
+              @include rem-calc(margin-right,10);
               vertical-align: middle;
             }
             .timestamp{
@@ -278,12 +281,23 @@
     }
 
   }
-  //form{
+
 
   //Apply
   .apply{
+    padding:0 6rem;
     margin-top: 15rem;
-    .input-text-group{
+    form{
+      @include rem-calc(margin-top,50);
+      @include rem-calc(margin-bottom,65);
+
+
+
+    }
+
+
+
+    .user-details{
       &::after{
         @include clearfix();
       }
@@ -293,15 +307,16 @@
         margin-bottom: 2rem;
       }
     }
-    .form-input-aside{
+    .user-details__field{
       float: left;
-      width: calc(50% - 13rem);
-      margin-right: 26rem;
+      width: calc(50% - 7rem);
+      margin-right: 14rem;
       &:nth-child(2n){
         margin-right:0;
       }
       input{
-        margin-top: 1rem;
+        @include rem-calc(margin-top,12);
+        padding:5px 20px;
         width:100%;
         border-radius: 8px;
         border: solid 1px #d5d5d5;
@@ -310,43 +325,98 @@
     .cv-upload{
 
       .file-dropzone{
-
         text-align: center;
+        width:100%;
         margin-top: 1rem;
         border-radius: 8px;
         border: solid 1px #d5d5d5;
-        padding: 3rem 5rem;
+        padding:3rem 0 4rem 0;
+        p{
+          font-weight: 200;
+          color:#818182;
+        }
         .file-search{
+          display: inline-block;
+          position: relative;
+          padding:0 40px;
+
           &::after{
             content:'';
-            width: 100%;
+            position: absolute;
+            bottom: 0px;
+            left:0;
+            right:0;
             height: 2px;
             display: block;
-            background-color: #283583;
+            background-color:#283583;
           }
-          display: inline-block;
-          padding:0 20px;
           label{
             color:#283583;
+            font-weight: bold;
             display: block;
+            line-height: 1.75;
             cursor: pointer;
-            margin-top: 2rem;
+            margin-top: 1rem;
           }
           input[type="file"]{
             display: none;
           }
-      }
+        }
       }
     }
     .comments{
       textarea{
         margin-top: 1rem;
+        padding:20px;
         width: 100%;
         resize: none;
         border-radius: 8px;
         border: solid 1px #d5d5d5;
       }
     }
+    input:invalid{
+      border-color:red;
+    }
+    .cta-button{
+      margin-top: 5rem;
+      float:right;
+    }
 
-
+  }
+  footer{
+    padding:60px 100px;
+    color:white;
+    .footer-left{
+      display: inline-block;
+      span{
+        font-size: 20px;
+        line-height: 1.5;
+        color:white;
+        @include rem-calc(margin-right,38);
+      }
+      ul{
+        display: inline-block;
+        vertical-align: middle;
+        @include rem-calc(margin-right,100);
+        &:last-child(){
+          margin-right: 0;
+        }
+        li{
+          display:block;
+          a{
+            color:white;
+          }
+        }
+      }
+    }
+    .footer-right{
+      display: inline-block;
+      li{
+        color:white;
+        display: inline-block;
+        a{
+          color:white;
+        }
+      }
+    }
   }

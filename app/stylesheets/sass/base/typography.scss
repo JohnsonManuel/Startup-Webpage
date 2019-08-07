@@ -99,5 +99,25 @@ h3{
       font-size: 14px;
     }
   }
+}
 
+.user-details__field,.cv-upload,.comments{
+  font-size: 24px;
+  label{
+    font-size: 24px;
+    font-weight: bold;
+    color:$text-black;
+  }
+  input,textarea{
+    color:$text-secondary;
+  }
+}
+.cv-upload{
+  font-size: 24px;
+}
+
+.apply-footer{
+  font-size: 14px;
+  line-height: 1.5;
+  color:#a2a2a2;
 }

@@ -1,9 +1,17 @@
-.cta-button{
+%button-style { 
   outline:none;
   border: none;
   border-radius: 15px;
-  padding:0.5rem 3rem;
   cursor:pointer;
   letter-spacing: 0.5;
   color:$text-primary-invert;
+}
+
+.cta-button{
+  @extend %button-style;
+  padding:0.5rem 5rem;
+}
+.cta-button-header{
+  @extend %button-style;
+  padding:0.5rem 3rem;
 }
