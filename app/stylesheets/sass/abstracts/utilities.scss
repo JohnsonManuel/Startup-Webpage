@@ -1,16 +1,20 @@
-.accent-1{
+.accent-primary{
   &-bg{
-    background-color: $accent-1;
+    background-color: $accent-primary;
   }
   &-text{
-    color: $accent-1;
+    color: $accent-primary;
   }
 }
-.accent-2{
+.accent-secondary{
   &-bg{
-    background-color: $accent-2;
+    background-color: $accent-secondary;
   }
   &-text{
-    color: $accent-2;
+    color: $accent-secondary;
   }
+}
+
+.hide{
+  display: none;
 }

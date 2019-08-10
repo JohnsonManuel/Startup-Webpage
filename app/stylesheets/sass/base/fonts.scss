@@ -2,7 +2,7 @@
 @font-face {
   font-family: 'Lato';
   font-style: normal;
-  font-weight: 400;
+  font-weight: normal;
   src: url('../fonts/Lato-Regular.ttf') format('truetype') /* Safari, Android, iOS */
 
 }
@@ -23,4 +23,12 @@
   font-style: normal;
   font-weight: 800;
   src: url('../fonts/Lato-Black.ttf') format('truetype')/* Safari, Android, iOS */
+}
+
+
+@font-face {
+  font-family:'SFProDisplay';
+  font-style: normal;
+  font-weight:lighter;
+  src: url('../fonts/SourceSansPro-Regular.ttf') format('truetype')/* Safari, Android, iOS */
 }

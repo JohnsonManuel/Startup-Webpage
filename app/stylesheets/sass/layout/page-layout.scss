@@ -2,16 +2,20 @@ html{
   scroll-behavior: smooth;
 }
 .container{
-  max-width: 1140px;
+  max-width: rem-calc(1140);
   margin: 0  auto;
 }
 
+
 /* Hero landing section */
 .hero{
-  padding: 0 10px;
+  @include set-padding(0,10,0,10,true);
   background: url(https://cdn.zeplin.io/59de1f633fed7a7ec333d574/assets/B72B9E2D-97E9-419A-8664-94B015A7AB2E.svg);
   background-repeat: no-repeat;
-  background-size: 100% 50%;
+  background-size: 100% ;
+  height: 75vh;
+  min-height: 650px;
+  max-height: 1000px;
 }
 
 .sub-description{
@@ -19,34 +23,29 @@ html{
 }
 
 .landing-page{
-
   text-align: center;
   position: relative;
-  padding-top: 8rem;
-  padding-bottom: 20rem;
-
-  h1,
-  p{
-    padding:0 30%;
-  }
+  max-width: 650px;
+  top:20%;
 
   p{
-    @include rem-calc(margin-top,60);
+    margin-top:rem-calc(60);
   }
 
   .page-scroll{
+    display: block;
     margin-top: 3.5rem;
+    padding: 0 10px;
     position: relative;
     a{
       cursor: pointer;
       color:$text-primary;
     }
-
     &::after{
       content: '';
       display: block;
-      width: 5px;
-      height: 30px;
+      width: rem-calc(5);
+      height: rem-calc(30);
       position: absolute;
       bottom: 0;
       top:calc(100% + 1rem);
@@ -58,8 +57,8 @@ html{
     &::before{
       content:'';
       display: block;
-      width: 5px;
-      height: 30px;
+      width: rem-calc(5);
+      height: rem-calc(30);
       position: absolute;
       bottom: 0;
       top:calc(100% + 1rem);
@@ -68,22 +67,23 @@ html{
       border-radius: 20px;
       background: $text-primary;
     }
+
   }
-  img{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 50%);
-  }
+
 }
 /* Discover us section */
 
 .main-wrapper{
-  padding:0 10px;
+  @include set-padding(0,10,0,10,true);
+  margin-bottom:rem-calc(219);
+  background-image: url('../../images/banners/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
   .discoverus{
     text-align: center;
-    @include rem-calc(padding-top,214);
+    padding-top:rem-calc(85);
     .cta-button{
       margin-top:2rem;
     }
@@ -92,15 +92,17 @@ html{
 /* Team  section */
 
   .team{
-    @include rem-calc(padding-top,214);
+
+    padding-top:rem-calc(200);
     &::after{
       @include clearfix();
     }
     .sub-description{
-      padding: 0 25%;
+      padding: 0 rem-calc(295);
     }
     .card-container{
       margin-top: 7rem;
+      @include set-padding(0,20,0,20,true);
       &::after{
         @include clearfix();
       }
@@ -108,17 +110,12 @@ html{
       .team-card{
         width: 50%;
         float:left;
-        &>div{
-          float:left;
-        }
+
         &__thumbnail{
-          @include size(160px);
+          float:left;
+          @include size(rem-calc(160));
           border-radius: 50%;
           overflow: hidden;
-          // background-image: url("/images/thumbnail/man.png");
-          // background-repeat: no-repeat;
-          // background-position: center;
-          // background-size: cover;
           img{
             @include size(100%);
             object-fit: cover;
@@ -126,11 +123,16 @@ html{
           }
         }
         &__content{
+          float:left;
           width:70%;
           padding: 0 1rem;
+          .card-heading{
+            text-shadow: 0px 0px 25px #c7c7c7;
+          }
           .card-description{
-            line-height: 2;
-            margin-top: 5px;
+            line-height: line-height-calc(35);
+            margin-top: rem-calc(10);
+            text-shadow: 0px 0px 25px #c7c7c7;
           }
           .cta-button{
             margin-top: 5rem;
@@ -143,50 +145,61 @@ html{
   /* process section */
 
   .process{
-    @include rem-calc(padding-top,214);
+
+    padding-top:rem-calc(214);
     .sub-description{
       margin-top: 2rem;
       padding: 0 25%;
     }
 
     .floatingcards-container{
-      margin: 10rem -1rem 0 -1rem;
+      margin: 10rem 0 0 0;
       &::after{
         @include clearfix();
       }
       //cards
-      .floating-card{
+      li{
         box-shadow: 0 4px 21px -5px rgba(97, 97, 97, 0.23);
         background-color: $card-bg;
         border-radius: 10px;
         overflow: auto;
-        width:calc(16.666% + 2rem);
+        width:calc(16.666% + 3.5rem);
         float:left;
-        margin-right:calc(16.666% - 2rem);
-        padding: 20px 35px;
-        margin-bottom:10%;
+        margin-right:calc(16.666% - 3.5rem);
+        @include set-padding(28,31,56,31,true);
+        margin-top:rem-calc(110);
+
         .card-description{
           margin-top: 16.666%;
+          line-height: line-height-calc(35);
+          // overflow: hidden;
+          // display: -webkit-box;
+          // -webkit-line-clamp: 4;
+          // -webkit-box-orient: vertical;
+        }
+        &:nth-child(1),&:nth-child(2),&:nth-child(3){
+          margin-top: 0;
         }
         &:nth-child(6n){
           margin-right:0;
-          margin-left:calc(16.666% - 2rem);
+          margin-left:calc(16.666% - 3.5rem);
         }
         &:nth-child(6n-1){
           margin-right:0;
-          margin-left:calc(16.666% - 2rem);
+          margin-left:calc(16.666% - 3.5rem);
         }
         &:nth-child(6n-2){
           margin-right:0;
-          margin-left:calc(16.666% - 2rem);
+          margin-left:calc(16.666% - 3.5rem);
         }
+
       }
     }
   }
 
 //bold-card
   .explication{
-    @include rem-calc(padding-top,125);
+     padding-top: rem-calc(122);
     .bold-cards-container{
       margin-top: 2rem;
       text-align: center;
@@ -195,8 +208,8 @@ html{
         display: inline-block;
         box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.19);
         width:calc(33.333% - 30px);
-        padding: 30px 20px;
-        margin:10px 0;
+        @include set-padding(30,20,30,20,true);
+        @include set-margin(10,0,10,0,true);
         &-title{
           margin-top: 1rem;
         }
@@ -204,7 +217,7 @@ html{
           margin-top: 1rem;
         }
         &:not(:nth-child(3n)){
-          margin-right: 30px;
+          margin-right: rem-calc(30);
         }
         &:last-child(){
           margin-right: 0;
@@ -216,14 +229,14 @@ html{
     .logo-grid-container{
       text-align: center;
       margin-top: 2rem;
-      .logo-grid-item{
+      li{
         display: inline-block;
         vertical-align: middle;
         margin-right: 4em;
         margin-bottom: 2em;
         img{
-          max-width:300px;
-          max-height: 120px;
+          max-width:rem-calc(300);
+          max-height: rem-calc(120);
         }
       }
     }
@@ -232,52 +245,56 @@ html{
 //news
   .news{
     text-align: center;
-    margin-top: 15rem;
-    .cta-button{
-      @include rem-calc(margin-top,69);
-    }
+    padding-top: rem-calc(166);
     .article-cards-container{
       text-align: justify;
+      font-size: 0;
       &::after{
-        content: '';
+        content:' ';
         display: inline-block;
         width: 100%;
       }
       .article-card{
         display: inline-block;
         width:calc(33.33% - 20px);
-        @include rem-calc(margin-top,44);
         border: solid 1px #dfdfdf;
+        margin-top:rem-calc(44);
+        &:nth-child(1),&:nth-child(2),&:nth-child(3){
+          margin-top: 0;
+        }
         &__snapshot{
-          @include size(100% , 180px);
+          @include size(100% , rem-calc(180));
         }
         &__unit{
-          padding: 20px;
+          @include set-padding(20,20,20,20,true);
           @include size(100% , 40%);
           p{
-            font-size: 16px;
+            font-size: rem-calc(16);
           }
           &-bottom{
-            max-height: 30px;
+            max-height: rem-calc(30);
             position: relative;
             margin-top: 2rem;
-            padding-left: 0 10px;
-            font-size: 12px;
+            font-size: rem-calc(12);
             img{
-              @include size(30px);
+              @include size(rem-calc(30));
               border-radius:50%;
               overflow: hidden;
-              @include rem-calc(margin-right,10);
+              margin-right:rem-calc(10);
               vertical-align: middle;
             }
             .timestamp{
-              font-size: 14px;
+              font-size: rem-calc(14);
               right: 0;
               @include centerer(false,true);
             }
           }
         }
       }
+
+    }
+    .cta-button{
+      margin-top: rem-calc(69);
     }
 
   }
@@ -285,45 +302,56 @@ html{
 
   //Apply
   .apply{
-    padding:0 6rem;
-    margin-top: 15rem;
-    form{
-      @include rem-calc(margin-top,50);
-      @include rem-calc(margin-bottom,65);
+    padding-top:rem-calc(268);
 
-
-
+    &::after{
+      @include clearfix();
     }
 
 
+
+    form{
+      margin-top:rem-calc(50);
+      ul{
+        >li{
+          margin-bottom: 2rem;
+          &:nth-child(1){
+            margin-bottom: 0;
+          }
+        }
+
+      }
+    }
 
     .user-details{
       &::after{
         @include clearfix();
       }
-    }
-    ul{
       li{
-        margin-bottom: 2rem;
+        float: left;
+        width: calc(50% - 7rem);
+        margin-right: 14rem;
+        &:nth-child(2n){
+          margin-right:0;
+        }
+        input{
+          margin-top:rem-calc(18);
+          @include set-padding(5,20,5,20,true);
+          width:100%;
+          border-radius: 8px;
+          border: solid 1px #d5d5d5;
+          &:invalid{
+            border-color: 1px solid red;
+          }
+        }
       }
     }
-    .user-details__field{
-      float: left;
-      width: calc(50% - 7rem);
-      margin-right: 14rem;
-      &:nth-child(2n){
-        margin-right:0;
-      }
-      input{
-        @include rem-calc(margin-top,12);
-        padding:5px 20px;
-        width:100%;
-        border-radius: 8px;
-        border: solid 1px #d5d5d5;
-      }
-    }
-    .cv-upload{
 
+    .apply-footer{
+      margin-top:rem-calc(65);
+    }
+
+    .cv-upload{
       .file-dropzone{
         text-align: center;
         width:100%;
@@ -331,22 +359,17 @@ html{
         border-radius: 8px;
         border: solid 1px #d5d5d5;
         padding:3rem 0 4rem 0;
-        p{
-          font-weight: 200;
-          color:#818182;
-        }
         .file-search{
           display: inline-block;
           position: relative;
-          padding:0 40px;
-
+          @include set-padding(0,40,0,40,true);
           &::after{
             content:'';
             position: absolute;
-            bottom: 0px;
+            bottom: 0;
             left:0;
             right:0;
-            height: 2px;
+            height: rem-calc(2);
             display: block;
             background-color:#283583;
           }
@@ -355,8 +378,8 @@ html{
             font-weight: bold;
             display: block;
             line-height: 1.75;
-            cursor: pointer;
             margin-top: 1rem;
+            cursor: pointer;
           }
           input[type="file"]{
             display: none;
@@ -367,7 +390,7 @@ html{
     .comments{
       textarea{
         margin-top: 1rem;
-        padding:20px;
+        @include set-padding(20,20,20,20,true);
         width: 100%;
         resize: none;
         border-radius: 8px;
@@ -381,42 +404,31 @@ html{
       margin-top: 5rem;
       float:right;
     }
-
   }
-  footer{
-    padding:60px 100px;
-    color:white;
-    .footer-left{
-      display: inline-block;
-      span{
-        font-size: 20px;
-        line-height: 1.5;
-        color:white;
-        @include rem-calc(margin-right,38);
-      }
-      ul{
-        display: inline-block;
-        vertical-align: middle;
-        @include rem-calc(margin-right,100);
-        &:last-child(){
-          margin-right: 0;
-        }
-        li{
-          display:block;
-          a{
-            color:white;
+//720 60
+
+  @media only screen and (max-width :1220px) {
+
+    html{
+      font-size: 80%;
+    }
+  }
+  @media only screen and (max-width :1024px) {
+        .team{
+          .card-container{
+            .team-card{
+              text-align: center;
+              &__thumbnail{
+                float: none;
+                margin: auto;
+              }
+              &__content{
+                width:100%;
+              }
+            }
           }
         }
-      }
     }
-    .footer-right{
-      display: inline-block;
-      li{
-        color:white;
-        display: inline-block;
-        a{
-          color:white;
-        }
-      }
-    }
-  }
+@media only screen and (max-width :1024px) {
+
+}

@@ -18,6 +18,7 @@
         transform: translateY(-50%);
     }
 }
+
 @mixin vendor($property, $value){
     -webkit-#{$property}:$value;
        -moz-#{$property}:$value;
@@ -25,13 +26,41 @@
          -o-#{$property}:$value;
             #{$property}:$value;
 }
+
 @mixin clearfix(){
   content:'';
   display: block;
   clear:both;
 }
 
-@mixin rem-calc($property, $size ,$base-font-size: 16)
+@mixin set-padding($top,$right,$bottom,$left,$rem:false)
 {
-  #{$property}:($size/$base-font-size) * 1rem;
+  @if($rem){
+    padding-top: rem-calc($top);
+    padding-right: rem-calc($right);
+    padding-bottom: rem-calc($bottom);
+    padding-left:rem-calc($left);
+  }
+  @else{
+    padding-top: $top * 1px;
+    padding-right: $right * 1px;
+    padding-bottom: $bottom * 1px;
+    padding-left:$left * 1px;
+  }
+}
+
+@mixin set-margin($top,$right,$bottom,$left,$rem:false)
+{
+  @if($rem){
+     margin-top: rem-calc($top);
+     margin-right: rem-calc($right);
+     margin-bottom: rem-calc($bottom);
+     margin-left:rem-calc($left);
+  }
+  @else{
+     margin-top: $top * 1px;
+     margin-right: $right * 1px;
+     margin-bottom: $bottom * 1px;
+     margin-left:$left * 1px;
+  }
 }

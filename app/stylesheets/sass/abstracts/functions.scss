@@ -1,0 +1,11 @@
+@function rem-calc($size,$base-font-size: 16)
+{
+  @return ($size/$base-font-size)*1rem;
+}
+
+
+@function line-height-calc($size,$base-font-size: 16)
+{
+  @return ($size/$base-font-size);
+
+}

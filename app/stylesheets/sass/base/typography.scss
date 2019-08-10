@@ -1,39 +1,48 @@
+
+
 body{
   font-family: 'Lato';
-  font-size: 14px;
-  font-weight: 400;
+  font-size: rem-calc(14);
+  font-weight: normal;
 }
 
 //heading styles
 h1{
-  font-size: 82px;
+  font-size: rem-calc(82);
 }
 h2{
-  font-size: 82px;
+  font-size: rem-calc(82);
 }
 h3{
-  font-size: 24px;
+  font-size: rem-calc(24);
+}
+//logo styles
+
+.logo{
+  font-size: rem-calc(20);
+  font-weight: normal;
+  color: $accent-primary;
 }
 
 //main text styles
 .main{
   &-heading{
     text-align: center;
-    font-size: 82px;
-    padding: 0 10px;
+    font-size: rem-calc(82);
+    @include set-padding(0,10,0,10,true);
     font-weight: bold;
-    color: $accent-2;
+    color: $accent-secondary;
   }
   &-description{
     text-align: center;
-    font-size: 24px;
-    padding: 0 10px;
+    font-size: rem-calc(24);
+    @include set-padding(0,10,0,10,true);
     line-height: 1.5;
     color:$text-secondary;
   }
 }
 .page-scroll{
-  font-size: 18px;
+  font-size: rem-calc(18);
   line-height: 2;
   color:$text-primary;
 }
@@ -43,14 +52,14 @@ h3{
 .sub{
   &-heading{
     text-align: center;
-    font-size: 48px;
-    padding: 0 10px;
+    font-size: rem-calc(48);
+    @include set-padding(0,10,0,10,true);
     color: $text-primary;
   }
   &-description{
     text-align: center;
-    font-size: 20px;
-    padding: 0 10px;
+    font-size: rem-calc(20);
+    @include set-padding(0,10,0,10,true);
     line-height: 2;
     color:$text-secondary;
   }
@@ -59,18 +68,20 @@ h3{
 //button text styles
 
 .cta-button{
-  font-size: 16px;
+  font-size:rem-calc(16);
 }
 
 // card text styles
 .card{
   &-heading{
-    font-size:24px;
+    font-size:rem-calc(24);
+    font-weight: 900;
+    opacity:0.68;
   }
   &-description{
-    font-size: 14px;
+    font-size: rem-calc(14);
     line-height: 2;
-    color:$text-secondary;
+    color:#929292;
   }
 }
 
@@ -78,46 +89,57 @@ h3{
   color: $text-primary-invert;
   text-align: center;
   &-title{
-    font-size: 64px;
+    font-size: rem-calc(64);
     font-weight: 900;
   }
   &-text{
-    font-size: 24px;
+    font-size: rem-calc(24);
     line-height: 1.5;
   }
 }
 
 .article-card__unit{
-  font-size: 14px;
+  font-size: rem-calc(14);
   color:$text-black;
   &-bottom{
     color:#848484;
     span{
-      font-size: 12px;
+      font-size: rem-calc(12);
     }
     .timestamp{
-      font-size: 14px;
+      font-size: rem-calc(14);
     }
   }
 }
 
-.user-details__field,.cv-upload,.comments{
-  font-size: 24px;
-  label{
-    font-size: 24px;
-    font-weight: bold;
-    color:$text-black;
-  }
-  input,textarea{
-    color:$text-secondary;
-  }
-}
-.cv-upload{
-  font-size: 24px;
+.apply{
+    li{
+      font-size: rem-calc(24);
+      label{
+        font-size: rem-calc(24);
+        font-weight: bold;
+        color:$text-black;
+      }
+      input,textarea{
+        line-height:line-height-calc(24);
+        font-size: rem-calc(20);
+        color:$text-secondary;
+      }
+    }
 }
 
+.file-dropzone{
+  p{
+    font-weight: 200;
+    color:#818182;
+  }
+
+}
+
+
+
 .apply-footer{
-  font-size: 14px;
+  font-size:rem-calc(14);
   line-height: 1.5;
   color:#a2a2a2;
 }

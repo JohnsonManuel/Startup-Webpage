@@ -3,11 +3,12 @@ sass = require('gulp-sass'),
 rename = require('gulp-rename'),
 connect= require('gulp-connect');
 
-gulp.task('connect', function(){
+gulp.task('connect', function(done){
   connect.server({
     root: 'app',
     livereload: true
   });
+  done();
 });
 
 gulp.task('sass', function(){
@@ -19,8 +20,9 @@ gulp.task('sass', function(){
 });
 
 // watch task
-gulp.task('watch', function(){
+gulp.task('watch', function(done){
   gulp.watch(['app/stylesheets/sass/**/*.scss' , 'app/*.html'], gulp.series('sass'));
+  done();
 });
 
 gulp.task('default',gulp.parallel('connect','watch'));
