@@ -25,7 +25,7 @@ html{
 .landing-page{
   text-align: center;
   position: relative;
-  max-width: 650px;
+  max-width: 550px;
   top:20%;
 
   p{
@@ -151,49 +151,48 @@ html{
       margin-top: 2rem;
       padding: 0 25%;
     }
+  }
+  .floatingcards-container{
+    margin: 10rem 0 0 0;
+    &::after{
+      @include clearfix();
+    }
+    //cards
+    li{
+      box-shadow: 0 4px 21px -5px rgba(97, 97, 97, 0.23);
+      background-color: $card-bg;
+      border-radius: 10px;
+      overflow: auto;
+      width:calc(16.666% + 3.5rem);
+      float:left;
+      margin-right:calc(16.666% - 3.5rem);
+      @include set-padding(28,31,56,31,true);
+      margin-top:rem-calc(110);
 
-    .floatingcards-container{
-      margin: 10rem 0 0 0;
-      &::after{
-        @include clearfix();
+      .card-description{
+        margin-top: 16.666%;
+        line-height: line-height-calc(35);
+        // overflow: hidden;
+        // display: -webkit-box;
+        // -webkit-line-clamp: 4;
+        // -webkit-box-orient: vertical;
       }
-      //cards
-      li{
-        box-shadow: 0 4px 21px -5px rgba(97, 97, 97, 0.23);
-        background-color: $card-bg;
-        border-radius: 10px;
-        overflow: auto;
-        width:calc(16.666% + 3.5rem);
-        float:left;
-        margin-right:calc(16.666% - 3.5rem);
-        @include set-padding(28,31,56,31,true);
-        margin-top:rem-calc(110);
-
-        .card-description{
-          margin-top: 16.666%;
-          line-height: line-height-calc(35);
-          // overflow: hidden;
-          // display: -webkit-box;
-          // -webkit-line-clamp: 4;
-          // -webkit-box-orient: vertical;
-        }
-        &:nth-child(1),&:nth-child(2),&:nth-child(3){
-          margin-top: 0;
-        }
-        &:nth-child(6n){
-          margin-right:0;
-          margin-left:calc(16.666% - 3.5rem);
-        }
-        &:nth-child(6n-1){
-          margin-right:0;
-          margin-left:calc(16.666% - 3.5rem);
-        }
-        &:nth-child(6n-2){
-          margin-right:0;
-          margin-left:calc(16.666% - 3.5rem);
-        }
-
+      &:nth-child(1),&:nth-child(2),&:nth-child(3){
+        margin-top: 0;
       }
+      &:nth-child(6n){
+        margin-right:0;
+        margin-left:calc(16.666% - 3.5rem);
+      }
+      &:nth-child(6n-1){
+        margin-right:0;
+        margin-left:calc(16.666% - 3.5rem);
+      }
+      &:nth-child(6n-2){
+        margin-right:0;
+        margin-left:calc(16.666% - 3.5rem);
+      }
+
     }
   }
 
@@ -407,28 +406,75 @@ html{
   }
 //720 60
 
-  @media only screen and (max-width :1220px) {
+  @media only screen and (min-width :1800px) {
 
     html{
-      font-size: 80%;
+      font-size: 20px;
     }
   }
-  @media only screen and (max-width :1024px) {
-        .team{
-          .card-container{
-            .team-card{
-              text-align: center;
-              &__thumbnail{
-                float: none;
-                margin: auto;
-              }
-              &__content{
-                width:100%;
-              }
-            }
-          }
-        }
+@media only screen and (max-width :1320px) and (min-width:1200px){
+
+
+}
+@media only screen and (max-width :1200px) {
+.team{
+  .card-container{
+    .team-card{
+      width:100%;
+      &__content{
+        width:80%;
+      }
+      &__thumbnail{
+        width: 20%;
+        height: 100%;
+      }
+      &:last-child{
+        margin-top: 50px;
+      }
     }
-@media only screen and (max-width :1024px) {
+  }
+}
+  .team-card{
+    width:100%;
+  }
+    .floatingcards-container{
+      li{
+        width:calc(50% - 10rem);
+        &:nth-child(1n){
+          margin: 20px 0 0 0 ;
+          margin-right: 10rem;
+          margin-top: 5rem;
+        }
+        &:nth-child(4n),&:nth-child(4n-1){
+          margin-left:10rem;
+          margin-right: 0;
+        }
+        &:nth-child(even){
+          margin-right: 0;
+        }
+      }
+    }
+    header{
+      .hamburger{
+        display:inline-block;
+      }
+      .logo{
+        position: relative;
+        display: inline-block;
+        margin-left: 30px;
+        left:auto;
+        transform: translate(0);
+        vertical-align: middle;
+      }
+      .cta-button-header{
+        display: inline-block;
+      }
+
+    }
+    .menu{
+      display:none;
+    }
+
+
 
 }
