@@ -29,14 +29,12 @@ h3{
   &-heading{
     text-align: center;
     font-size: rem-calc(82);
-    @include set-padding(0,10,0,10,true);
     font-weight: bold;
     color: $accent-secondary;
   }
   &-description{
     text-align: center;
     font-size: rem-calc(24);
-    @include set-padding(0,10,0,10,true);
     line-height: 1.5;
     color:$text-secondary;
   }
@@ -53,13 +51,11 @@ h3{
   &-heading{
     text-align: center;
     font-size: rem-calc(48);
-    @include set-padding(0,10,0,10,true);
     color: $text-primary;
   }
   &-description{
     text-align: center;
     font-size: rem-calc(20);
-    @include set-padding(0,10,0,10,true);
     line-height: 2;
     color:$text-secondary;
   }

@@ -5,7 +5,11 @@ html{
   max-width: rem-calc(1140);
   margin: 0  auto;
 }
-
+.heading-container{
+  max-width: 580px;
+  margin:0 auto;
+  padding:0 10px;
+}
 
 /* Hero landing section */
 .hero{
@@ -26,6 +30,7 @@ html{
   text-align: center;
   position: relative;
   max-width: 550px;
+  padding:0 10px;
   top:20%;
 
   p{
@@ -74,7 +79,7 @@ html{
 /* Discover us section */
 
 .main-wrapper{
-  @include set-padding(0,10,0,10,true);
+  @include set-padding(0,20,0,20,true);
   margin-bottom:rem-calc(219);
   background-image: url('../../images/banners/background.svg');
   background-repeat: no-repeat;
@@ -87,6 +92,10 @@ html{
     .cta-button{
       margin-top:2rem;
     }
+    img{
+      max-width: 460px;
+      width: 50%;
+    }
   }
 
 /* Team  section */
@@ -97,9 +106,7 @@ html{
     &::after{
       @include clearfix();
     }
-    .sub-description{
-      padding: 0 rem-calc(295);
-    }
+
     .card-container{
       margin-top: 7rem;
       @include set-padding(0,20,0,20,true);
@@ -147,10 +154,6 @@ html{
   .process{
 
     padding-top:rem-calc(214);
-    .sub-description{
-      margin-top: 2rem;
-      padding: 0 25%;
-    }
   }
   .floatingcards-container{
     margin: 10rem 0 0 0;
@@ -267,6 +270,7 @@ html{
         &__unit{
           @include set-padding(20,20,20,20,true);
           @include size(100% , 40%);
+          background: $text-primary-invert;
           p{
             font-size: rem-calc(16);
           }
@@ -302,26 +306,24 @@ html{
   //Apply
   .apply{
     padding-top:rem-calc(268);
-
     &::after{
       @include clearfix();
     }
-
-
-
+    .heading-container{
+      max-width: 100%;
+      padding:0 10px;
+    }
     form{
       margin-top:rem-calc(50);
-      ul{
+      >ul{
         >li{
           margin-bottom: 2rem;
           &:nth-child(1){
             margin-bottom: 0;
           }
         }
-
       }
     }
-
     .user-details{
       &::after{
         @include clearfix();
@@ -330,6 +332,8 @@ html{
         float: left;
         width: calc(50% - 7rem);
         margin-right: 14rem;
+        margin-bottom: 2rem;
+
         &:nth-child(2n){
           margin-right:0;
         }
@@ -345,11 +349,9 @@ html{
         }
       }
     }
-
     .apply-footer{
       margin-top:rem-calc(65);
     }
-
     .cv-upload{
       .file-dropzone{
         text-align: center;
@@ -404,77 +406,215 @@ html{
       float:right;
     }
   }
-//720 60
 
-  @media only screen and (min-width :1800px) {
 
-    html{
-      font-size: 20px;
+
+
+//media queries
+
+
+
+
+@media only screen and (min-width :1800px) {
+  html{
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width :1200px) {
+  header{
+    .hamburger{
+      display:inline-block;
+    }
+    .logo{
+      position: relative;
+      display: inline-block;
+      margin-left: 30px;
+      left:auto;
+      transform: translate(0);
+      vertical-align: middle;
+    }
+    .cta-button-header{
+      display: inline-block;
     }
   }
-@media only screen and (max-width :1320px) and (min-width:1200px){
-
-
-}
-@media only screen and (max-width :1200px) {
-.team{
-  .card-container{
-    .team-card{
-      width:100%;
-      &__content{
-        width:80%;
+  .menu{
+    display:none;
+  }
+  .team{
+    .card-container{
+      .team-card{
+        width:100%;
+        &__content{
+          width:80%;
+        }
+        &__thumbnail{
+          width: 20%;
+          height: 100%;
+        }
+        &:last-child{
+          margin-top: 100px;
+        }
       }
-      &__thumbnail{
-        width: 20%;
-        height: 100%;
+    }
+  }
+  .floatingcards-container{
+    li{
+      width:calc(50% - 10rem);
+      &:nth-child(1n){
+        margin: 20px 0 0 0 ;
+        margin-right: 10rem;
+        margin-top: 5rem;
+      }
+      &:nth-child(4n),&:nth-child(4n-1){
+        margin-left:10rem;
+        margin-right: 0;
+      }
+      &:nth-child(even){
+        margin-right: 0;
+      }
+    }
+  }
+  .explication {
+    .bold-cards-container{
+      .bold-card{
+        width: calc(50% - 30px);
+      }
+    }
+  }
+  .news {
+    .article-cards-container{
+      .article-card {
+        width: calc(50% - 20px);
+        &:nth-child(1n){
+          margin-top: rem-calc(44);
+        }
+      }
+    }
+  }
+  .footer-left{
+    ul{
+      margin-right:rem-calc(75);
+    }
+  }
+  .footer-right{
+    li{
+      margin-right: 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width :980px) {
+  header{
+    padding:20px 40px;
+  }
+  .team{
+    .card-container{
+      text-align: center;
+      .team-card{
+        width:100%;
+        &__content{
+          width:100%;
+          margin-top: 30px;
+          .cta-button{
+            margin-top: 3rem;
+          }
+        }
+        &__thumbnail{
+          width: 30%;
+          height: 100%;
+          float: none;
+          margin: auto;
+        }
+        &:last-child{
+          margin-top: 150px;
+        }
+      }
+    }
+  }
+  .apply{
+    .user-details{
+      li{
+        width:100%;
+      }
+    }
+  }
+  .footer-left{
+    display: block;
+    text-align: justify;
+    &::after{
+      content: '';
+      width:100%;
+      display: inline-block;
+
+    }
+    .logo{
+      display: block;
+      margin: auto;
+      text-align: center;
+    }
+    ul{
+      width:calc(50%);
+      margin: 20px 0 0 0 ;
+      &:last-child{
+        text-align: right;
+      }
+    }
+  }
+  .footer-right{
+    display: block;
+    margin-top:20px;
+    text-align: center;
+    .icons{
+      margin-top:20px;
+      display: block;
+    }
+  }
+}
+@media only screen and (max-width :860px){
+  .floatingcards-container{
+    li{
+      width:calc(100%);
+      &:nth-child(1n){
+        margin: 20px 0 0 0 ;
+      }
+    }
+  }
+  .explication {
+    .bold-cards-container{
+      .bold-card{
+        width: calc(100%);
+      }
+    }
+  }
+  .news {
+    .article-cards-container{
+      .article-card {
+        width: calc(100%);
+      }
+    }
+  }
+}
+@media only screen and (max-width :860px){
+  .footer-left{
+    text-align: center;
+    ul{
+      width: 100%;
+      margin: 0;
+      li{
+        display: block;
+        margin: 10px 0;
       }
       &:last-child{
-        margin-top: 50px;
+        text-align: center;
       }
     }
   }
-}
-  .team-card{
-    width:100%;
+  .footer-right{
+    text-align: center;
+    li{
+      display: block;
+      margin: 10px 0;
+    }
   }
-    .floatingcards-container{
-      li{
-        width:calc(50% - 10rem);
-        &:nth-child(1n){
-          margin: 20px 0 0 0 ;
-          margin-right: 10rem;
-          margin-top: 5rem;
-        }
-        &:nth-child(4n),&:nth-child(4n-1){
-          margin-left:10rem;
-          margin-right: 0;
-        }
-        &:nth-child(even){
-          margin-right: 0;
-        }
-      }
-    }
-    header{
-      .hamburger{
-        display:inline-block;
-      }
-      .logo{
-        position: relative;
-        display: inline-block;
-        margin-left: 30px;
-        left:auto;
-        transform: translate(0);
-        vertical-align: middle;
-      }
-      .cta-button-header{
-        display: inline-block;
-      }
-
-    }
-    .menu{
-      display:none;
-    }
-
-
-
 }

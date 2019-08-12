@@ -11,120 +11,127 @@ footer{
     display: inline-block;
     width: 100%;
   }
-  .footer-left{
+}
+.footer-left{
+  display: inline-block;
+  font-size: 0;
+  a{
     display: inline-block;
-    .logo{
-      line-height: 1.5;
-      color:white;
-      font-weight: lighter;
-      margin-right: rem-calc(38);
+  }
+  .logo{
+    line-height: 1.5;
+    color:white;
+    font-weight: lighter;
+    margin-right: rem-calc(38);
+  }
+  ul{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right:rem-calc(150);
+    &:last-child(){
+      margin-right: 0;
     }
-    ul{
-      display: inline-block;
-      vertical-align: middle;
-      margin-right:rem-calc(150);
-      &:last-child(){
-        margin-right: 0;
+    li{
+      margin-bottom:rem-calc(8);
+      a{
+        color:white;
+        font-weight: 200;
       }
-      li{
-        margin-bottom:rem-calc(8);
-        a{
-          color:white;
-          font-weight: 200;
-        }
+      &:last-child{
+        margin-bottom: 0;
       }
     }
   }
-  .footer-right{
+}
+.footer-right{
+  display: inline-block;
+  vertical-align: middle;
+  &::after{
+    @include clearfix();
+  }
+  >li{
     display: inline-block;
-    vertical-align: middle;
-    &::after{
-      @include clearfix();
-    }
-    >li{
-      display: inline-block;
+    color:white;
+    margin-right: 4rem;
+    a{
       color:white;
-      margin-right: 4rem;
-      a{
-        color:white;
-        font-weight:200;
+      font-weight:200;
 
-      }
-      span{
-      }
-      a{
-        margin-right:rem-calc(18);
-        &:last-child(){
-          margin-right: 0;
-        }
-      }
+    }
+    span{
+    }
+    a{
+      margin-right:rem-calc(18);
       &:last-child(){
         margin-right: 0;
       }
     }
-    .language-selector{
-      position: relative;
-      cursor: pointer;
-      .language-list{
+    &:last-child(){
+      margin-right: 0;
+    }
+  }
+  .language-selector{
+    position: relative;
+    cursor: pointer;
+    .language-list{
+      position: absolute;
+      top:0;
+      left: 0;
+      transform: translateY(calc(-100% - 10px));
+      border-radius: 10px;
+      text-align: center;
+      background:$accent-secondary;
+      &::after{
+        content: '';
+        display: block;
         position: absolute;
-        top:0;
-        transform: translateY(calc(-100% - 10px));
-        border-radius: 10px;
-        text-align: center;
-        background:$accent-secondary;
-        &::after{
-          content: '';
-          display: block;
-          position: absolute;
-          @include size(0);
-          border-top: 10px solid $accent-secondary;
-          border-left: 10px solid transparent;
-          border-right:10px solid transparent;
-          left: 50%;
-          bottom: 0;
-          transform: translate(-50%,100%);
-        }
-        li{
-          a{
-            display: inline-block;
-            @include set-padding(10,20,10,20,true);
-            cursor: pointer;
-            &:hover{
-              color:$accent-primary;
-            }
+        @include size(0);
+        border-top: 10px solid $accent-secondary;
+        border-left: 10px solid transparent;
+        border-right:10px solid transparent;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%,100%);
+      }
+      li{
+        a{
+          display: inline-block;
+          @include set-padding(10,20,10,20,true);
+          cursor: pointer;
+          &:hover{
+            color:$accent-primary;
           }
         }
       }
-      div{
-        &::after{
-          content: '';
-          display: block;
-          width: 2px;
-          height: 10px;
-          position: absolute;
-          left:calc(100% + 1rem);
-          top: 50%;
-          transform: translate(-160%,-50%)rotate(-45deg);
-          border-radius: 20px;
-          background: $text-primary-invert;
-        }
-        &::before{
-          content:'';
-          display: block;
-          width: 2px;
-          height: 10px;
-          position: absolute;
-          left:calc(100% + 1rem);
-          top: 50%;
-          transform: translate(160%,-50%)rotate(45deg);
-          border-radius: 20px;
-          background: $text-primary-invert;
-        }
+    }
+    div{
+      &::after{
+        content: '';
+        display: block;
+        width: 2px;
+        height: 10px;
+        position: absolute;
+        left:calc(100% + 1rem);
+        top: 50%;
+        transform: translate(-160%,-50%)rotate(-45deg);
+        border-radius: 20px;
+        background: $text-primary-invert;
       }
-      span{
-        font-weight:200;
+      &::before{
+        content:'';
+        display: block;
+        width: 2px;
+        height: 10px;
+        position: absolute;
+        left:calc(100% + 1rem);
+        top: 50%;
+        transform: translate(160%,-50%)rotate(45deg);
+        border-radius: 20px;
+        background: $text-primary-invert;
       }
     }
+    span{
+      font-weight:200;
+    }
   }
-
 }
