@@ -73,6 +73,7 @@ footer{
   .language-selector{
     position: relative;
     cursor: pointer;
+
     .language-list{
       position: absolute;
       top:0;
@@ -105,6 +106,9 @@ footer{
       }
     }
     div{
+      span{
+
+
       &::after{
         content: '';
         display: block;
@@ -129,6 +133,7 @@ footer{
         border-radius: 20px;
         background: $text-primary-invert;
       }
+    }
     }
     span{
       font-weight:200;

@@ -27,13 +27,13 @@
             #{$property}:$value;
 }
 
-@mixin clearfix(){
+@mixin clearfix {
   content:'';
   display: block;
   clear:both;
 }
 
-@mixin set-padding($top,$right,$bottom,$left,$rem:false)
+@mixin set-padding($top: null,$right: null,$bottom: null,$left: null,$rem:false)
 {
   @if($rem){
     padding-top: rem-calc($top);
@@ -48,6 +48,7 @@
     padding-left:$left * 1px;
   }
 }
+
 
 @mixin set-margin($top,$right,$bottom,$left,$rem:false)
 {

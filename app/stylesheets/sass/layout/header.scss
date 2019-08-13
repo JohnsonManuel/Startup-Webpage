@@ -5,12 +5,14 @@ header{
   left:0;
   right:0;
   z-index:3;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,1);
   transition: all 0.3s ease;
-  &::after{
-    content: '';
-    display: block;
-    clear: both;
+
+  .logo{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50% , -50%);
   }
   .hamburger{
     @include size(40px,30px);
@@ -29,22 +31,20 @@ header{
       }
     }
   }
-  
-  >span{
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
+  .nav-left{
+    text-align: right;
+    float:left;
+
+  }
+  .nav-right{
+    float:right;
+    text-align: left;
   }
   .menu{
-    max-width: 800px;
-    margin:0 auto;
-    text-align: center;
-    li{
-      float: left;
-      width: 14.23%;
-      padding: 0 1rem;
+    width:calc(50% - 50px);
       a{
         line-height: 30px;
+        padding: 0 1rem;
         font-size:rem-calc(14);
         color:$text-primary;
         cursor:pointer;
@@ -52,10 +52,17 @@ header{
           color:$accent-secondary;
         }
       }
-    }
   }
   .cta-button-header{
     float: right;
     background-color: $accent-primary;
+  }
+  .header-wrapper{
+    position: relative;
+    &::after{
+      content: '';
+      display: block;
+      clear: both;
+    }
   }
 }

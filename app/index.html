@@ -10,23 +10,38 @@
   </head>
   <body>
     <header>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="header-wrapper">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <span class="logo" href="#startup-sec">STARTUP</span>
+          <nav class="menu nav-left">
+            <a href="#team-sec">Team</a>
+            <a href="#discover-sec">About us</a>
+            <a href="#process-sec">Process</a>
+          </nav>
+          <nav class="menu nav-right">
+            <a href="#explication-sec">Explication</a>
+            <a href="#news-sec">News</a>
+            <a href="#apply-sec">Contact</a>
+            <button class="cta-button-header" type="button" name="Apply">Apply</button>
+          </nav>
       </div>
-      <span class="logo" href="#startup-sec">STARTUP</span>
-      <ul class="menu">
+
+    </header>
+    <div class="sidenav">
+      <ul>
+        <li><span class="logo">STARTUP</span></li>
         <li><a href="#team-sec">Team</a></li>
         <li><a href="#discover-sec">About us</a></li>
         <li><a href="#process-sec">Process</a></li>
-        <li>&nbsp</li>
         <li><a href="#explication-sec">Explicatijon</a></li>
         <li><a href="#news-sec">News</a></li>
         <li><a href="#apply-sec">Contact</a></li>
       </ul>
-      <button class="cta-button-header" type="button" name="Apply">Apply</button>
-    </header>
+    </div>
     <section class="hero">
       <article class="landing-page container">
           <h1 class="main-heading">Welcome to Website</h1>
@@ -263,7 +278,8 @@
                 <p>Drag and drop a file  or</p>
                 <div class="file-search">
                   <label for="cv-upload">Search a file</label>
-                  <input id="cv-upload" type="file">
+                  <input id="cv-upload" type="file" accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf, image/*">
+                  <p id="fileuploaded"><p>
                 </div>
               </div>
                <li class="comments">
@@ -276,7 +292,8 @@
         <button class="cta-button accent-primary-bg"type="button" name="button">VALIDATE</button>
       </div>
     </section>
-    <footer class="accent-primary-bg">
+    <footer class="accent-primary-bg " >
+
       <div class="footer-left">
         <a class="logo" href="#">STARTUP</a>
         <ul>
@@ -297,10 +314,10 @@
           <div>
             <span>English</span>
             <ul class="language-list hide">
-              <li><a href="">French</a></li>
-              <li><a href="#">Russian</a></li>
-              <li><a href="#">Korean</a></li>
-              <li><a href="#">Spanish</a></li>
+              <li><a href="javascript:void(0)">French</a></li>
+              <li><a href="javascript:void(0)">Russian</a></li>
+              <li><a href="javascript:void(0)">Korean</a></li>
+              <li><a href="javascript:void(0)">Spanish</a></li>
             </ul>
           </div>
         </li>
