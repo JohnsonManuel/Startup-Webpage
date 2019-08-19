@@ -65,3 +65,44 @@
      margin-left:$left * 1px;
   }
 }
+@mixin close-button($size,$thickness,$color:black){
+  border: $thickness*1px solid $color;
+  border-radius:50%;
+  width: $size*1px;
+  height:$size*1px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  &::after,&::before{
+    content: '';
+    display: block;
+    width: $thickness*1px;
+    height: ($size - 2*$thickness - $thickness)*1px;
+    background: $color;
+    border-radius: 10px;
+    @include centerer(true,true);
+  }
+  &::before{
+    transform: translate(-50%,-50%) rotate(45deg);
+  }
+  &::after{
+    transform: translate(-50%,-50%) rotate(-45deg);
+  }
+}
+
+//meida query mixin
+@mixin for-desktops-up {
+  @media (min-width: 1800px) { @content; }
+}
+@mixin for-laptops-up{
+  @media (max-width: 1200px) { @content; }
+}
+@mixin for-tablets-landscape-up {
+  @media (max-width: 980px) { @content; }
+}
+@mixin for-tablets-portrait-up{
+  @media (max-width : 860px){ @content; }
+}
+@mixin for-phones-down {
+  @media (max-width: 520px) { @content; }
+}

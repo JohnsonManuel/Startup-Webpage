@@ -3,6 +3,8 @@
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
 @import 'abstracts/utilities';
+@import 'abstracts/placeholder';
+
 //base-folder
 @import 'base/reset';
 @import 'base/fonts';
@@ -12,6 +14,7 @@
 @import 'components/buttons';
 @import 'components/timestamp';
 @import 'components/sidenav.scss';
+@import 'components/blowup-article';
 //layout-folder
 @import 'layout/header';
 @import 'layout/footer';

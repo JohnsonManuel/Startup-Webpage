@@ -1,5 +1,7 @@
-
+var count=0;
+var offset=0;
 var prevScrollpos = window.pageYOffset;
+
 window.onscroll = function() {
 let currentScrollPos = window.pageYOffset;
 let header = document.getElementsByTagName('header');
@@ -14,6 +16,52 @@ let header = document.getElementsByTagName('header');
 
 var sidenav= document.querySelector('.sidenav');
 
+
+document.querySelector('.article-card').addEventListener('click',toggleBUA);
+
+// let slideToggles= document.querySelectorAll('.fas');
+// slideToggles.forEach((element)=>{
+//   element.addEventListener('click',handleSlider);
+// });
+document.querySelector('.blowup-article').addEventListener('click',handleSlider)
+function handleSlider(e){
+
+  let articleSlider= document.querySelector('.blowup-article-slider');
+  //
+  // if(count<articleSlider.children.length){
+  // }
+  // // articleSlider.children.length;
+  // console.log(count);
+  // (e.target.classList.contains('fa-chevron-circle-left'))?count++:count--;
+  console.log(count);
+  if((e.target.classList.contains('fa-chevron-circle-left'))||(e.target.classList.contains('fa-chevron-circle-right')))
+  {
+    (e.target.classList.contains('fa-chevron-circle-left'))?count++:count--;
+
+    if(count<=articleSlider.children.length)
+    {
+    if(e.target.classList.contains('fa-chevron-circle-left'))
+    {
+      offset-=90;
+    }
+    {
+      offset+=90;
+    }
+      articleSlider.style.left=(-offset)+"vw";
+  }
+}
+
+  console.log(e.target.matches('span'));
+  if(e.target.matches('span'))
+  {
+    console.log("Yeah");
+    toggleBUA();
+  }
+
+}
+function toggleBUA(){
+  document.querySelector('.blowup-article').classList.toggle('active');
+}
 document.querySelector('.language-selector').addEventListener('click',()=>{
   toggleHide(document.querySelector('.language-list'));
 },false);
@@ -24,21 +72,22 @@ document.querySelector('.language-list').addEventListener('click',function(e){
   }
 });
 
-document.querySelector('.hamburger').addEventListener('click',function(){
-  sidenav.classList.add('expand');
-  document.addEventListener('click',clickOutSideNav);
-});
+document.querySelector('.hamburger').addEventListener('click',toggleSideNav);
+sidenav.querySelector('span').addEventListener('click',toggleSideNav);
+  // document.addEventListener('click',clickOutSideNav,true);
 
 
-function clickOutSideNav(e){
-    console.log(e.target.matches('.sidenav ul'));
-    if(!e.target.matches('.sidenav ul') && !e.target.matches('.hamburger')){
-      sidenav.classList.remove('expand');
-      console.log('Added');
-      document.removeEventListener('click',clickOutSideNav);
-    }
 
+function toggleSideNav(e){
+    // console.log(e.target.matches('.sidenav ul'));
+    // if(!e.target.matches('.sidenav ul') && !e.target.matches('.hamburger')){
+    //   sidenav.classList.remove('expand');
+    //   console.log('Added');
+    //   document.removeEventListener('click',clickOutSideNav);
+    // }
+    sidenav.classList.toggle('expand');
 }
+
 function toggleHide(toToggle){
   toToggle.classList.toggle('hide');
 }

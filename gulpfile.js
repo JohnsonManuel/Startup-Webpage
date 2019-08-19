@@ -2,6 +2,19 @@ var gulp = require('gulp'),
 sass = require('gulp-sass'),
 rename = require('gulp-rename'),
 connect= require('gulp-connect');
+var webserver = require('gulp-webserver');
+
+// gulp.task('webserver', function() {
+//   gulp.src('../')
+//     .pipe(webserver({
+//       host:'0.0.0.0',
+//       fallback: 'index.html',
+//       livereload: true,
+//       directoryListing: true,
+//       open: true
+//     }));
+// });
+
 
 gulp.task('connect', function(done){
   connect.server({

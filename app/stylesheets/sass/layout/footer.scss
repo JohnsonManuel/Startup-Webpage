@@ -11,10 +11,35 @@ footer{
     display: inline-block;
     width: 100%;
   }
+  @include for-phones-down{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 .footer-left{
   display: inline-block;
   font-size: 0;
+  @include for-tablets-landscape-up{
+    display: block;
+    text-align: justify;
+    &::after{
+      content: '';
+      width:100%;
+      display: inline-block;
+
+    }
+    .logo{
+      display: block;
+      margin: auto;
+      text-align: center;
+    }
+    ul{
+      margin: 20px 0 0 0 ;
+      &:last-child{
+        text-align: right;
+      }
+    }
+  }
   a{
     display: inline-block;
   }
@@ -28,6 +53,9 @@ footer{
     display: inline-block;
     vertical-align: middle;
     margin-right:rem-calc(150);
+    @include for-laptops-up{
+      margin-right:rem-calc(75);
+    }
     &:last-child(){
       margin-right: 0;
     }
@@ -46,6 +74,15 @@ footer{
 .footer-right{
   display: inline-block;
   vertical-align: middle;
+  @include for-tablets-landscape-up{
+    display: block;
+    margin-top:20px;
+    text-align: center;
+    .icons{
+      margin-top:20px;
+      display: block;
+    }
+  }
   &::after{
     @include clearfix();
   }
@@ -53,6 +90,9 @@ footer{
     display: inline-block;
     color:white;
     margin-right: 4rem;
+    @include for-laptops-up{
+      margin-right: 2rem;
+    }
     a{
       color:white;
       font-weight:200;

@@ -1,30 +1,27 @@
 
-
-body{
-  font-family: 'Lato';
-  font-size: rem-calc(14);
-  font-weight: normal;
-}
-
-//heading styles
-h1{
-  font-size: rem-calc(82);
-}
-h2{
-  font-size: rem-calc(82);
-}
-h3{
-  font-size: rem-calc(24);
-}
+/* page typography */
+  body{
+    font-family: $font-stack;
+    font-size: rem-calc(14);
+    font-weight: 400;
+  }
+  /* heading styles */
+  h1{
+    font-size: rem-calc(82);
+  }
+  h2{
+    font-size: rem-calc(82);
+  }
+  h3{
+    font-size: rem-calc(24);
+  }
 //logo styles
-
 .logo{
   font-size: rem-calc(20);
   line-height: rem-calc(30);
   font-weight: normal;
   color: $accent-primary;
 }
-
 //main text styles
 .main{
   &-heading{
@@ -61,19 +58,15 @@ h3{
     color:$text-secondary;
   }
 }
-
 //button text styles
-
 .cta-button{
   font-size:rem-calc(16);
 }
-
 // card text styles
 .card{
   &-heading{
     font-size:rem-calc(24);
-    font-weight: 900;
-    opacity:0.68;
+    font-weight: 600;
   }
   &-description{
     font-size: rem-calc(14);
@@ -110,31 +103,31 @@ h3{
 }
 
 .apply{
-    li{
+  li{
+    font-size: rem-calc(24);
+    label{
       font-size: rem-calc(24);
-      label{
-        font-size: rem-calc(24);
-        font-weight: bold;
-        color:$text-black;
-      }
-      input,textarea{
-        line-height:line-height-calc(24);
-        font-size: rem-calc(20);
-        color:$text-secondary;
-      }
+      font-weight: bold;
+      color:$text-black;
     }
+    input,textarea{
+      line-height:line-height-calc(24);
+      font-size: rem-calc(20);
+      color:$text-secondary;
+    }
+  }
 }
-
 .file-dropzone{
   p{
+    font-size: 18px;
     font-weight: 200;
     color:#818182;
+    line-height: 2.3;
   }
-
+  .cv-upload{
+    font-size: 20px;
+  }
 }
-
-
-
 .apply-footer{
   font-size:rem-calc(14);
   line-height: 1.5;
