@@ -4,20 +4,26 @@ html{
       font-size: 20px;
   }
   @include for-phones-down{
-    font-size: 14px;
+    font-size: 12px;
   }
+
+}
+body{
+  background-image: url('../../images/banners/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y:950px;
 }
 .container{
-  max-width: rem-calc(1140);
+  max-width: rem-calc(1160);
+  padding: 0 10px;
   margin: 0  auto;
 }
 .heading-container{
   max-width: 580px;
   margin:0 auto;
 }
-.expand{
-  transform:translateX(0);
-}
+
 /* Hero landing section */
 .hero{
   @include set-padding(0,10,0,10);
@@ -84,14 +90,7 @@ html{
 }
 /* Discover us section */
 
-.main-wrapper{
-  @include set-padding(0,20,0,20);
-  margin-bottom:rem-calc(219);
-  background-image: url('../../images/banners/background.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
 
-}
 
   .discoverus{
     text-align: center;
@@ -151,7 +150,7 @@ html{
           margin-top: 5rem;
         }
       }
-      @include for-laptops-up{
+      @include for-laptops-down{
         width:100%;
         &:last-child{
             margin-top: 100px;
@@ -164,7 +163,7 @@ html{
           width:80%;
         }
       }
-      @include for-tablets-portrait-up{
+      @include for-tablets-portrait-down{
         text-align: center;
         .team-card{
           width:100%;
@@ -194,6 +193,9 @@ html{
 
   .process{
     padding-top:rem-calc(214);
+    &.container{
+      max-width:rem-calc(1310);
+    }
   }
   .floatingcards-container{
     margin: 10rem 0 0 0;
@@ -203,9 +205,6 @@ html{
     }
     //cards
     li{
-      .card-heading{
-        opacity:0.68;
-      }
       box-shadow: 0 4px 21px -5px rgba(97, 97, 97, 0.23);
       background-color: $card-bg;
       border-radius: 10px;
@@ -215,14 +214,16 @@ html{
       margin-right:calc(16.666% - 3.5rem);
       @include set-padding(28,31,56,31,true);
       margin-top:rem-calc(110);
-
+      .card-heading{
+        opacity:0.68;
+      }
       .card-description{
-        margin-top: 16.666%;
+        margin-top: rem-calc(10);
         line-height: line-height-calc(35);
-        // overflow: hidden;
-        // display: -webkit-box;
-        // -webkit-line-clamp: 4;
-        // -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
       }
 
       &:nth-child(1),&:nth-child(2),&:nth-child(3){
@@ -243,8 +244,8 @@ html{
         margin-right:0;
         margin-left:calc(16.666% - 3.5rem);
       }
-      
-      @include for-laptops-up{
+
+      @include for-laptops-down{
         width:calc(50% - 10rem);
         &:nth-child(1n){
             margin: 20px 0 0 0 ;
@@ -259,7 +260,7 @@ html{
             margin-right: 0;
         }
       }
-      @include for-tablets-portrait-up{
+      @include for-tablets-portrait-down{
         width:calc(100%);
         &:nth-child(1n){
           margin: 20px 0 0 0 ;
@@ -296,10 +297,10 @@ html{
         &:last-child(){
           margin-right: 0;
         }
-        @include for-laptops-up{
+        @include for-laptops-down{
           width: calc(50% - 30px);
         }
-        @include for-tablets-portrait-up{
+        @include for-tablets-portrait-down{
           width: calc(100%);
         }
       }
@@ -378,13 +379,13 @@ html{
             }
           }
         }
-        @include for-laptops-up{
+        @include for-laptops-down{
           width: calc(50% - 20px);
           &:nth-child(1n){
             margin-top: rem-calc(44);
           }
         }
-        @include for-tablets-portrait-up{
+        @include for-tablets-portrait-down{
           width:calc(100%);
         }
       }
@@ -400,6 +401,7 @@ html{
   //Apply
   .apply{
     padding-top:rem-calc(268);
+    padding-bottom:rem-calc(219);
     max-width: 950px;
     margin: 0 auto;
     &::after{
@@ -448,7 +450,7 @@ html{
             border: 1px solid red;
           }
         }
-        @include for-tablets-landscape-up{
+        @include for-tablets-landscape-down{
           width:100%;
         }
       }
@@ -516,17 +518,3 @@ html{
       float:right;
     }
   }
-
-
-
-
-//media queries
-
-@media only screen and (min-width :1800px) {
-}
-@media only screen and (max-width :980px) {
-}
-@media only screen and (max-width :860px){
-}
-@media only screen and (max-width :520px){
-}

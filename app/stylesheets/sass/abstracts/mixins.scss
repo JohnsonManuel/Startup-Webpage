@@ -94,13 +94,13 @@
 @mixin for-desktops-up {
   @media (min-width: 1800px) { @content; }
 }
-@mixin for-laptops-up{
-  @media (max-width: 1200px) { @content; }
+@mixin for-laptops-down{
+  @media (max-width: 1120px) { @content; }
 }
-@mixin for-tablets-landscape-up {
+@mixin for-tablets-landscape-down {
   @media (max-width: 980px) { @content; }
 }
-@mixin for-tablets-portrait-up{
+@mixin for-tablets-portrait-down{
   @media (max-width : 860px){ @content; }
 }
 @mixin for-phones-down {

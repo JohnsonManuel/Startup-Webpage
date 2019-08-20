@@ -4,47 +4,29 @@ header{
   top:0;
   left:0;
   right:0;
-  z-index:3;
+  z-index: 5;
   background: rgba(255,255,255,1);
   border-bottom: 1px solid #f4f4f4;
   transition: all 0.3s ease;
-  @include for-tablets-landscape-up{
-    padding:20px 40px;
+  @include for-tablets-landscape-down{
+    padding:20px 20px;
   }
+
   .logo{
     position:absolute;
     left:50%;
     transform:translateX(-50%);
-    @include for-laptops-up{
+    @include for-laptops-down{
       left: auto;
       transform: translate(0);
     }
   }
-  .hamburger{
-    @include size(40px,30px);
-    @include for-laptops-up{
-      margin-right: 20px;
-      display:inline-block;
-    }
-    display:none;
-    vertical-align: middle;
-    cursor:pointer;
-    span{
-      display: block;
-      height: 4px;
-      width: 100%;
-      background:$accent-secondary;
-      margin-top: 9px;
-      border-radius: 10px;
-      &:first-child{
-        margin-top: 0;
-      }
-    }
-  }
+
   .nav-left{
     text-align : right;
     float:left;
-    @include for-laptops-up{
+    z-index: 1;
+    @include for-laptops-down{
       text-align: left;
     }
   }
@@ -56,7 +38,7 @@ header{
     width:calc(50% - 50px);
     ul{
       display: inline-block;
-      @include for-laptops-up{
+      @include for-laptops-down{
         display: none;
       }
       li{
@@ -77,7 +59,7 @@ header{
   .cta-button-header{
     float: right;
     background-color: $accent-primary;
-    @include for-laptops-up{
+    @include for-laptops-down{
       display: inline-block;
 
     }

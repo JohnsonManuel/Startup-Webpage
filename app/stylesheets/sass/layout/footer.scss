@@ -1,6 +1,11 @@
 footer{
-  @include set-padding(44,102,25,102,true);
-  color:white;
+  background-color: $accent-primary;
+
+}
+.footer-wrapper{
+  @include set-padding(44,20,25,20,true);
+  max-width: rem-calc(1130);
+  margin: 0 auto;
   text-align: justify;
   font-size: 0;
   div,ul{
@@ -12,34 +17,13 @@ footer{
     width: 100%;
   }
   @include for-phones-down{
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 .footer-left{
   display: inline-block;
   font-size: 0;
-  @include for-tablets-landscape-up{
-    display: block;
-    text-align: justify;
-    &::after{
-      content: '';
-      width:100%;
-      display: inline-block;
-
-    }
-    .logo{
-      display: block;
-      margin: auto;
-      text-align: center;
-    }
-    ul{
-      margin: 20px 0 0 0 ;
-      &:last-child{
-        text-align: right;
-      }
-    }
-  }
   a{
     display: inline-block;
   }
@@ -53,20 +37,39 @@ footer{
     display: inline-block;
     vertical-align: middle;
     margin-right:rem-calc(150);
-    @include for-laptops-up{
+    @include for-laptops-down{
       margin-right:rem-calc(75);
     }
     &:last-child(){
       margin-right: 0;
     }
     li{
-      margin-bottom:rem-calc(8);
+      &+li{
+      margin-top:rem-calc(8);
+      }
       a{
         color:white;
         font-weight: 200;
       }
+    }
+  }
+  @include for-tablets-landscape-down{
+    display: block;
+    text-align: justify;
+    &::after{
+      content: '';
+      width:100%;
+      display: inline-block;
+    }
+    .logo{
+      display: block;
+      text-align: center;
+      margin-right: 0;
+      margin-bottom:20px;
+    }
+    ul{
       &:last-child{
-        margin-bottom: 0;
+        text-align: right;
       }
     }
   }
@@ -74,7 +77,7 @@ footer{
 .footer-right{
   display: inline-block;
   vertical-align: middle;
-  @include for-tablets-landscape-up{
+  @include for-tablets-landscape-down{
     display: block;
     margin-top:20px;
     text-align: center;
@@ -90,7 +93,7 @@ footer{
     display: inline-block;
     color:white;
     margin-right: 4rem;
-    @include for-laptops-up{
+    @include for-laptops-down{
       margin-right: 2rem;
     }
     a{

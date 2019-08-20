@@ -1,67 +1,55 @@
 var count=0;
 var offset=0;
-var prevScrollpos = window.pageYOffset;
 
-window.onscroll = function() {
-let currentScrollPos = window.pageYOffset;
-let header = document.getElementsByTagName('header');
 
-  if (currentScrollPos > prevScrollpos) {
-    header[0].style.transform= "translateY(-100%)";
-  } else {
-    header[0].style.transform = "translateY(0)";
-  }
-  prevScrollpos = currentScrollPos;
+
+let articlecards =document.querySelectorAll('.article-card');
+
+articlecards.forEach((elem)=>{elem.addEventListener('click',handleArticleOpen);});
+
+document.querySelector('.blowup-article').addEventListener('click',handleSlider);
+
+function handleArticleOpen(){
+   count= getNodeindex(this);
+   moveSlide(count);
+   toggleBUA();
 }
-
-var sidenav= document.querySelector('.sidenav');
-
-
-document.querySelector('.article-card').addEventListener('click',toggleBUA);
-
-// let slideToggles= document.querySelectorAll('.fas');
-// slideToggles.forEach((element)=>{
-//   element.addEventListener('click',handleSlider);
-// });
-document.querySelector('.blowup-article').addEventListener('click',handleSlider)
+function getNodeindex(elem){
+  var elemChildren= elem.parentNode.children, i=0;
+  for(;i<elemChildren.length;i++)
+  {
+    if(elemChildren[i] == elem) return i;
+  }
+}
 function handleSlider(e){
-
   let articleSlider= document.querySelector('.blowup-article-slider');
-  //
-  // if(count<articleSlider.children.length){
-  // }
-  // // articleSlider.children.length;
-  // console.log(count);
-  // (e.target.classList.contains('fa-chevron-circle-left'))?count++:count--;
-  console.log(count);
   if((e.target.classList.contains('fa-chevron-circle-left'))||(e.target.classList.contains('fa-chevron-circle-right')))
   {
-    (e.target.classList.contains('fa-chevron-circle-left'))?count++:count--;
-
-    if(count<=articleSlider.children.length)
-    {
-    if(e.target.classList.contains('fa-chevron-circle-left'))
-    {
-      offset-=90;
+    if(e.target.classList.contains('fa-chevron-circle-left')&&count>0){
+      count--;
     }
-    {
-      offset+=90;
+    if(e.target.classList.contains('fa-chevron-circle-right')&& count<articleSlider.children.length-1){
+      count++;
     }
-      articleSlider.style.left=(-offset)+"vw";
+    moveSlide(count)
   }
-}
-
-  console.log(e.target.matches('span'));
   if(e.target.matches('span'))
   {
-    console.log("Yeah");
     toggleBUA();
   }
+}
 
+function moveSlide(toMove = count){
+  let articleSlider= document.querySelector('.blowup-article-slider');
+  let offset = toMove*90;
+  articleSlider.style.left=(-offset)+"vw";
 }
+
 function toggleBUA(){
-  document.querySelector('.blowup-article').classList.toggle('active');
+  setTimeout(()=>{document.querySelector('.blowup-article').classList.toggle('active');},400);
 }
+
+
 document.querySelector('.language-selector').addEventListener('click',()=>{
   toggleHide(document.querySelector('.language-list'));
 },false);
@@ -72,21 +60,26 @@ document.querySelector('.language-list').addEventListener('click',function(e){
   }
 });
 
-document.querySelector('.hamburger').addEventListener('click',toggleSideNav);
-sidenav.querySelector('span').addEventListener('click',toggleSideNav);
-  // document.addEventListener('click',clickOutSideNav,true);
+document.querySelector('.hamburger').addEventListener('click',togglemobileMenu);
 
+  // document.addEventListener('click',clickOutmobileMenu,true);
 
+let mobileMenu= document.querySelector('.mobilemenu').addEventListener('click',handleMobileMenuClick);
 
-function toggleSideNav(e){
-    // console.log(e.target.matches('.sidenav ul'));
-    // if(!e.target.matches('.sidenav ul') && !e.target.matches('.hamburger')){
-    //   sidenav.classList.remove('expand');
-    //   console.log('Added');
-    //   document.removeEventListener('click',clickOutSideNav);
-    // }
-    sidenav.classList.toggle('expand');
+function handleMobileMenuClick(e){
+  if(e.target.matches('a')){
+    e.target.classList.add('current');
+    setTimeout(togglemobileMenu,100);
+
+  }
 }
+
+function togglemobileMenu(){
+    document.querySelector('.header-wrapper').classList.toggle('mobilemenuopen');
+
+}
+
+
 
 function toggleHide(toToggle){
   toToggle.classList.toggle('hide');
